@@ -18,17 +18,17 @@ age_label.grid(row=1,column=2,padx=5,pady=5)
 
 # Entries
 
-name_entery=Entry(window)
-name_entery.grid(row=0,column=1)
+name_entry=Entry(window)
+name_entry.grid(row=0,column=1)
 
-familly_entery=Entry(window)
-familly_entery.grid(row=0,column=3)
+familly_entry=Entry(window)
+familly_entry.grid(row=0,column=3)
 
-id_entery=Entry(window)
-id_entery.grid(row=1,column=1)
+id_entry=Entry(window)
+id_entry.grid(row=1,column=1)
 
-age_entery=Entry(window)
-age_entery.grid(row=1,column=3)
+age_entry=Entry(window)
+age_entry.grid(row=1,column=3)
 
 search_entry=Entry(window)
 search_entry.grid(row=4,column=3)
