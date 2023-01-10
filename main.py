@@ -65,6 +65,8 @@ scrollbar.grid(row=4,column=0)
 window.title('Student Registration System')
 window.geometry('700x700')
 window.resizable(width=False,height=False)
+listbox.configure(yscrollcommand=scrollbar.set)
+scrollbar.configure(command=listbox.yview)
 
 # Run
 
