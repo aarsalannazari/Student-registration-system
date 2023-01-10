@@ -16,7 +16,7 @@ student_id_label.grid(row=1,column=0,padx=5,pady=5)
 age_label=Label(window,text='age:')
 age_label.grid(row=1,column=2,padx=5,pady=5)
 
-# Entrys
+# Entries
 
 name_entery=Entry(window)
 name_entery.grid(row=0,column=1)
