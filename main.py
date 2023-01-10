@@ -35,19 +35,19 @@ search_entry.grid(row=4,column=3)
 
 # Buttons
 
-add_button=Button(window,text='add')
+add_button=Button(window,text='add',font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
 add_button.grid(row=3,column=0,padx=5,pady=5)
 
-edit_button=Button(window,text='edit')
+edit_button=Button(window,text='edit',font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
 edit_button.grid(row=3,column=1,padx=5,pady=5)
 
-delete_button=Button(window,text='delete')
+delete_button=Button(window,text='delete',font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
 delete_button.grid(row=3,column=2,padx=5,pady=5)
 
-show_button=Button(window,text='show all')
+show_button=Button(window,text='show all',font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
 show_button.grid(row=3,column=3,padx=5,pady=5)
 
-search_button=Button(window,text='search')
+search_button=Button(window,text='search',bd=2,font=('arial',14,'bold'),bg='powder blue',activebackground='powder blue')
 search_button.grid(row=4,column=2,padx=5,pady=5)
 
 
