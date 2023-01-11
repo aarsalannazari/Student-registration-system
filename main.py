@@ -16,8 +16,8 @@ def get_sellected(self):
     familly_entry.delete(0,END)
     familly_entry.insert(0,select[2])
 
-    id_entry.delete(0,END)
-    id_entry.insert(0,select[3])
+    student_id_entry.delete(0,END)
+    student_id_entry.insert(0,select[3])
 
     age_entry.delete(0,END)
     age_entry.insert(0,select[4])
@@ -77,8 +77,8 @@ name_entry.grid(row=0,column=1)
 familly_entry=Entry(window)
 familly_entry.grid(row=0,column=3)
 
-id_entry=Entry(window)
-id_entry.grid(row=1,column=1)
+student_id_entry=Entry(window)
+student_id_entry.grid(row=1,column=1)
 
 age_entry=Entry(window)
 age_entry.grid(row=1,column=3)
@@ -88,7 +88,7 @@ search_entry.grid(row=4,column=3)
 
 # Buttons
 
-add_button=Button(window,text='add',command=lambda:Insert_student(name_entry.get(),familly_entry.get(),id_entry.get(),age_entry.get()),font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
+add_button=Button(window,text='add',command=lambda:Insert_student(name_entry.get(),familly_entry.get(), student_id_entry.get(),age_entry.get()),font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
 add_button.grid(row=3,column=0,padx=5,pady=5)
 
 edit_button=Button(window,text='edit',font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
