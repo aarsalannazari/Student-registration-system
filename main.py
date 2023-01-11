@@ -7,6 +7,24 @@ window=Tk()
 
 #Functions
 
+def get_sellected(self):
+    i=listbox.curselection()[0]
+    select=listbox.get(i)
+    name_entry.delete(0,END)
+    name_entry.insert(0,select[1])
+
+    familly_entry.delete(0,END)
+    familly_entry.insert(0,select[2])
+
+    id_entry.delete(0,END)
+    id_entry.insert(0,select[3])
+
+    age_entry.delete(0,END)
+    age_entry.insert(0,select[4])
+
+    return select
+
+
 def Insert_student(name,familly,st_id,age):
     res=Insert(name,familly,st_id,age)
     if res != False:
@@ -15,6 +33,26 @@ def Insert_student(name,familly,st_id,age):
         id_entry.delete(0,END)
         age_entry.delete(0,END)
         messagebox.showinfo('Registration confirmation','The new student was successfully registered')
+    else:
+        messagebox.showerror('Error','This student number has already been registered!')
+
+def Show_students():
+    res=Show()
+    if res != False:
+        listbox.delete(0,END)
+        for i in res:
+            listbox.insert(0,i)
+    else:
+        messagebox.showerror('Error','An error occurred while retrieving data!')
+
+def Delete_stuedent(id):
+    res=Delete(id)
+    if res != False:
+        name_entry.delete(0,END)
+        familly_entry.delete(0,END)
+        id_entry.delete(0,END)
+        age_entry.delete(0,END)
+        messagebox.showinfo('Confirm deletion','Student information has been successfully deleted')
     else:
         messagebox.showerror('Error','This student number has already been registered!')
 
@@ -59,7 +97,7 @@ edit_button.grid(row=3,column=1,padx=5,pady=5)
 delete_button=Button(window,text='delete',font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
 delete_button.grid(row=3,column=2,padx=5,pady=5)
 
-show_button=Button(window,text='show all',font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
+show_button=Button(window,text='show all',command=lambda:Show_students(),font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
 show_button.grid(row=3,column=3,padx=5,pady=5)
 
 search_button=Button(window,text='search',bd=2,font=('arial',14,'bold'),bg='powder blue',activebackground='powder blue')
@@ -83,6 +121,7 @@ window.geometry('700x700')
 window.resizable(width=False,height=False)
 listbox.configure(yscrollcommand=scrollbar.set)
 scrollbar.configure(command=listbox.yview)
+listbox.bind('<<ListboxSelect>>',get_sellected)
 
 # Run
 
