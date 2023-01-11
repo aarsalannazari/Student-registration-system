@@ -8,7 +8,7 @@ def Create_Table():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name VARCHAR(30) ,
         familly VARCHAR(30) ,
-        student_id INTEGER (5) ,
+        student_id INTEGER (5) UNIQUE ,
         age INTEGER (3)
     )
     ''')
@@ -19,7 +19,7 @@ def Insert(name,familly,st_id,age):
     connection=sqlite3.connect('Student-reistration.db')
     cursor=connection.cursor()
     try:
-        cursor.execute("INSER INTO students VALUES(NULL,?,?,?,?)",(name,familly,st_id,age))
+        cursor.execute("INSERT INTO students VALUES(NULL,?,?,?,?)",(name,familly,st_id,age))
         connection.commit()
         connection.close()
     except Exception as e:
