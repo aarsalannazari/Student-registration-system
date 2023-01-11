@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 from Data_Base_function import *
 # Create instance
 
@@ -6,7 +7,16 @@ window=Tk()
 
 #Functions
 
-
+def Insert_student(name,familly,st_id,age):
+    res=Insert(name,familly,st_id,age)
+    if res != False:
+        name_entry.delete(0,END)
+        familly_entry.delete(0,END)
+        id_entry.delete(0,END)
+        age_entry.delete(0,END)
+        messagebox.showinfo('Registration confirmation','The new student was successfully registered')
+    else:
+        messagebox.showerror('Error','This student number has already been registered!')
 
 # Labels 
 name_label=Label(window,text='name:')
@@ -40,7 +50,7 @@ search_entry.grid(row=4,column=3)
 
 # Buttons
 
-add_button=Button(window,text='add',font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
+add_button=Button(window,text='add',command=lambda:Insert_student(name_entry.get(),familly_entry.get(),id_entry.get(),age_entry.get()),font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
 add_button.grid(row=3,column=0,padx=5,pady=5)
 
 edit_button=Button(window,text='edit',font=('arial',12,'bold'),bd=2,activeforeground='white',activebackground='black',bg='white',fg='black')
