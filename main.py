@@ -54,7 +54,7 @@ def Delete_stuedent(id):
         age_entry.delete(0,END)
         messagebox.showinfo('Confirm deletion','Student information has been successfully deleted')
     else:
-        messagebox.showerror('Error','This student number has already been registered!')
+        messagebox.showerror('Error','An error occurred while deleting information!')
 
 # Labels 
 name_label=Label(window,text='name:')
