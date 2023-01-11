@@ -25,6 +25,26 @@ def Insert(name,familly,st_id,age):
     except Exception as e:
         return False
 
+def Show():
+    connection=sqlite3.connect('Student-reistration.db')
+    cursor=connection.cursor()
+    try:
+        cursor.execute("SELECT * FROM students")
+        res=cursor.fetchall()
+        connection.close()
+        return res
+    except Exception as e:
+        return False
+    
+def Delete(id):
+    connection=sqlite3.connect('Student-reistration.db')
+    cursor=connection.cursor()
+    try:
+        cursor.execute("DELETE FROM students WHERE student_id=?",(id))
+        connection.close()
+    except Exception as e:
+        return False
+
 Create_Table()
 
 # I Continue this program for tomorrow
