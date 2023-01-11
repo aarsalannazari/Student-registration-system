@@ -40,7 +40,7 @@ def Delete(id):
     connection=sqlite3.connect('Student-reistration.db')
     cursor=connection.cursor()
     try:
-        cursor.execute("DELETE FROM students WHERE student_id=?",(id))
+        cursor.execute("DELETE FROM students WHERE student_id=?",(id,))
         connection.close()
     except Exception as e:
         return False
