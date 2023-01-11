@@ -1,7 +1,12 @@
 from tkinter import *
 from Data_Base_function import *
+# Create instance
 
-window=Tk() # Create instance
+window=Tk()
+
+#Functions
+
+
 
 # Labels 
 name_label=Label(window,text='name:')
@@ -62,6 +67,7 @@ scrollbar=Scrollbar(window)
 scrollbar.grid(row=4,column=0)
 
 # Settings
+
 window.title('Student Registration System')
 window.geometry('700x700')
 window.resizable(width=False,height=False)
