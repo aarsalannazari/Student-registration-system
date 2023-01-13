@@ -34,6 +34,7 @@ def Insert_student(name,familly,st_id,age):
         student_id_entry.delete(0,END)
         age_entry.delete(0,END)
         messagebox.showinfo('Registration confirmation','The new student was successfully registered')
+        Show_students()
     else:
         messagebox.showerror('Error','This student number has already been registered!')
 
