@@ -54,6 +54,7 @@ def Delete_student(id):
         student_id_entry.delete(0,END)
         age_entry.delete(0,END)
         messagebox.showinfo('Confirm deletion','Student information has been successfully deleted')
+        Show_students()
     else:
         messagebox.showerror('Error','An error occurred while deleting information!')
 
