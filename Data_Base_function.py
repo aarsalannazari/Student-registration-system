@@ -41,10 +41,31 @@ def Delete(id):
     cursor=connection.cursor()
     try:
         cursor.execute("DELETE FROM students WHERE student_id=?",(id,))
+        connection.commit()
         connection.close()
     except Exception:
         return False
 
-Create_Table()
+def Search(id='',name='',familly='',age=''):
+    connection=sqlite3.connect('Student-reistration.db')
+    cursor=connection.cursor()
+    try:
+        cursor.execute("SELECT * FROM students WHERE student_id=? OR name=? OR familly=? OR age=?",(id,name,familly,age))
+        res=cursor.fetchall()
+        connection.close()
+        return res
+    except Exception:
+        return False
 
-# I Continue this program for tomorrow
+def Update(name,familly,st_id,age,id):
+    connection=sqlite3.connect('Student-reistration.db')
+    cursor=connection.cursor()
+    try:
+        cursor.execute("UPDATE students SET name=? , familly=? , student_id=? , age=? WHERE id=?",(name,familly,st_id,age,id))
+        connection.commit()
+        connection.close()
+    except Exception:
+        return False
+    
+
+Create_Table()
