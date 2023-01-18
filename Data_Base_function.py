@@ -22,7 +22,7 @@ def Insert(name,familly,st_id,age):
         cursor.execute("INSERT INTO students VALUES(NULL,?,?,?,?)",(name,familly,st_id,age))
         connection.commit()
         connection.close()
-    except Exception as e:
+    except Exception:
         return False
 
 def Show():
@@ -33,7 +33,7 @@ def Show():
         res=cursor.fetchall()
         connection.close()
         return res
-    except Exception as e:
+    except Exception:
         return False
     
 def Delete(id):
@@ -42,7 +42,7 @@ def Delete(id):
     try:
         cursor.execute("DELETE FROM students WHERE student_id=?",(id,))
         connection.close()
-    except Exception as e:
+    except Exception:
         return False
 
 Create_Table()
