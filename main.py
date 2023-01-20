@@ -10,7 +10,8 @@ window=Tk()
 
 def get_sellected(self):
     global select
-    i=listbox.curselection()[0]
+    try:i=listbox.curselection()[0]
+    except IndexError:pass
     select=listbox.get(i)
     name_entry.delete(0,END)
     name_entry.insert(0,select[1])
