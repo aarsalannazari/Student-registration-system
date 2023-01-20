@@ -10,24 +10,26 @@ window=Tk()
 
 def get_sellected(self):
     global select
-    try:i=listbox.curselection()[0]
+    try:
+        i=listbox.curselection()[0]
+        select=listbox.get(i)
+
+        name_entry.delete(0,END)
+        name_entry.insert(0,select[1])
+
+        familly_entry.delete(0,END)
+        familly_entry.insert(0,select[2])
+
+        student_id_entry.delete(0,END)
+        student_id_entry.insert(0,select[3])
+
+        age_entry.delete(0,END)
+        age_entry.insert(0,select[4])
+
+        return select
+    
     except IndexError:pass
-    select=listbox.get(i)
-    name_entry.delete(0,END)
-    name_entry.insert(0,select[1])
-
-    familly_entry.delete(0,END)
-    familly_entry.insert(0,select[2])
-
-    student_id_entry.delete(0,END)
-    student_id_entry.insert(0,select[3])
-
-    age_entry.delete(0,END)
-    age_entry.insert(0,select[4])
-
-    return select
-
-
+    
 def Insert_student(name,familly,st_id,age):
     res=Insert(name,familly,st_id,age)
     if res != False:
