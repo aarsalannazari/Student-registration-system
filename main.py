@@ -52,17 +52,19 @@ def Show_students():
         messagebox.showerror('Error','An error occurred while retrieving data!')
 
 def Delete_student():
-    id=select[3]
-    res=Delete(id)
-    if res != False:
-        name_entry.delete(0,END)
-        familly_entry.delete(0,END)
-        student_id_entry.delete(0,END)
-        age_entry.delete(0,END)
-        messagebox.showinfo('Confirm deletion','Student information has been successfully deleted')
-        Show_students()
-    else:
-        messagebox.showerror('Error','An error occurred while deleting information!')
+    try:
+        id=select[3]
+        res=Delete(id)
+        if res != False:
+            name_entry.delete(0,END)
+            familly_entry.delete(0,END)
+            student_id_entry.delete(0,END)
+            age_entry.delete(0,END)
+            messagebox.showinfo('Confirm deletion','Student information has been successfully deleted')
+            Show_students()
+        else:
+            messagebox.showerror('Error','An error occurred while deleting information!')
+    except:pass
 
 def Search_student(id,name,familly,age):
     res=Search(id,name,familly,age)
@@ -74,17 +76,19 @@ def Search_student(id,name,familly,age):
         messagebox.showerror('Error','An error occurred while retrieving data!')
 
 def Update_student(name,familly,student_id,age):
-    id=select[0]
-    res=Update(name,familly,student_id,age,id)
-    if res != False:
-        messagebox.showinfo('Update confirmation','The update was completed successfully')
-        name_entry.delete(0,END)
-        familly_entry.delete(0,END)
-        student_id_entry.delete(0,END)
-        age_entry.delete(0,END)
-        Show_students()
-    else:
-        messagebox.showerror('Error','An error occurred in the update!')
+    try:
+        id=select[0]
+        res=Update(name,familly,student_id,age,id)
+        if res != False:
+            messagebox.showinfo('Update confirmation','The update was completed successfully')
+            name_entry.delete(0,END)
+            familly_entry.delete(0,END)
+            student_id_entry.delete(0,END)
+            age_entry.delete(0,END)
+            Show_students()
+        else:
+            messagebox.showerror('Error','An error occurred in the update!')
+    except:pass
 
 
 # Labels 
